@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="jquery-1.11.0.js"></script>
+<script type = "text/javascript">
+function ValidateForm()
+{
+    $('span.error_msg').html('');
+   var success = true;
+    $("#forma input").each(function()
+        {
+            if($(this).val()=="")
+            {
+                $(this).next().html("Morate uneti vrednost!");
+                success = false;
+            }
+    });
+    return success;
+}
+
+$(document).ready(function() {
+    $('input:password').focus(
+    function(){
+        $(this).css({'background-color' : '#33ff33'});
+    });
+
+    $('input:password').blur(
+    function(){
+        $(this).css({'background-color' : '#FFFFEE'});
+    });
+}); 
+</script>
+<title>Logovanje</title>
+</head>
+<body>
+	<h4>Ulogujte se</h4>
+	<form action="LoginServlet" method="post" onSubmit = "return ValidateForm()" id="forma">
+		Username:<input type="text" name="username" placeholder="username"/><font size="3" color="red"><span class="error_msg"></span></font><br/>
+		Password:<input type="password" name="password" placeholder="password"/><font size="3" color="red"><span class="error_msg"></span></font><br/>
+		<input type="submit" value="login"/><br/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+Register:
+<form action="InsertUserServlet" method="get">
+	username:<input type="text" name="username"/><br/>
+	password:<input type="text" name="password"/><br/>
+<input type="submit" value="reg"/><br/>
+</form>
+<hr/>
+Remove user:
+<form action="DeleteUserServlet" method="get">
+	id:<input type="text" name="id"/><br/>
+	<input type="submit" value="del"/><br/>
+</form>
+<hr/>
+Find user by id:
+<form action="FindUserServlet" method="get">
+	id:<input type="text" name="id"/><br/>
+	<input type="submit" value="find"/><br/>
+</form>
+<hr/>
+Find product by id:
+<form action="FindProductServlet" method="get">
+	id:<input type="text" name="id"/><br/>
+	<input type="submit" value="find"/><br/>
+</form>
+<hr/>
+Remove product:
+<form action="DeleteProduct" method="get">
+	id:<input type="text" name="id"/><br/>
+	<input type="submit" value="del"/><br/>
+</form>
+<hr/>
+Insert product:
+<form action="InsertProductServlet" method="get">
+	name:<input type="text" name="name"/><br/>
+	price:<input type="text" name="price"/><br/>
+		<input type="submit" value="add"/><br/>
+</form>
+</html>
