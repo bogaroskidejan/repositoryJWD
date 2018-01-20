@@ -1,0 +1,101 @@
+<br /> <br />
+<div class="page-header">
+	<h3>Knjizara</h3>
+</div>
+<div ng-controller="knjigeCtrl">
+<div ng-if="stranica">
+		<div class="form-group pull-right">
+			<button class="btn btn-primary" ng-click="promeniStranicu()">Filtriranje</button>
+		</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="naziv">Naziv:</label> <input class="form-control"
+					ng-model="newKnjiga.naziv" id="naziv" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="pisac">Pisac:</label> <input class="form-control"
+					ng-model="newKnjiga.pisac" id="pisac" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="isbn">ISBN:</label> <input class="form-control"
+					ng-model="newKnjiga.ISBN" id="isbn" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="kolicina">Kolicina na stanju:</label> <input
+					class="form-control" ng-model="newKnjiga.kolicina" id="kolicina"
+					type="text" />
+			</div>
+			<div class="form-group">
+				<label for="cena">Cena:</label> <input class="form-control"
+					ng-model="newKnjiga.cena" id="cena" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="izdavac">Izdavac:</label> <select class="form-control"
+					ng-model="newKnjiga.idIzdavaca" id="izdavac">
+					<option ng-repeat="i in izdavaci" value="{{ i.id }}">{{ i.naziv }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" ng-click="addKnjiga()">Dodaj</button>
+			</div>
+	</div>
+	<div ng-if="!stranica">
+		<div class="form-group">
+			<button class="btn btn-primary pull-right"
+				ng-click="promeniStranicu()">Dodavanje</button>
+		</div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label for="naziv">Naziv:</label> <input class="form-control"
+					ng-model="searchedKnjiga.naziv" id="naziv" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="pisac">Pisac:</label> <input class="form-control"
+					ng-model="searchedKnjiga.pisac" id="pisac" type="text" />
+			</div>
+			<div class="form-group">
+				<label for="kolicina">Gornja granica kolicine:</label> <input
+					class="form-control" ng-model="searchedKnjiga.gornjaKol"
+					id="kolicina" type="text" />
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary" ng-click="search()">Filtriraj</button>
+			</div>
+		</form>
+	</div>
+	<br />
+	<div class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="go(-1)" ng-disabled="page == 0">Previous</button>
+		<button class="btn btn-primary" ng-click="go(1)" ng-disabled="page == totalPages - 1">Next</button>
+	</div>
+	<br />
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Naziv:</th>
+				<th>Pisac:</th>
+				<th>Cena:</th>
+				<th>Kolicina:</th>
+				<th>Naziv izdavaca:</th>
+				<th>Akcija:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="k in knjige">
+				<td class="col-md-2">{{ k.naziv }}</td>
+				<td class="col-md-2">{{ k.pisac }}</td>
+				<td class="col-md-1">{{ k.cena }}</td>
+				<td class="col-md-1">{{ k.kolicina }}</td>
+				<td class="col-md-1">{{ k.nazivIzdavaca }}</td>
+				<td>
+					<button class="btn btn-danger" ng-click="deleteKnjiga(k.id)">obrisi</button>
+					<button class="btn btn-warning" ng-click="editKnjiga(k.id)">izmeni na posebnoj strani</button>
+					<button ng-disabled="k.kolicina <= 0" ng-click="kupi(k.id)" class="btn btn-primary">Kupi</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="pull-right">
+		<h3>strana<span class="badge">{{page + 1}}.</span></h3>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<br /> <br />
+<div class="page-header">
+	<h3>Izmena knjige</h3>
+</div>
+<div ng-controller="editKnjigaCtrl">
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="naziv">Naziv</label>
+			<input class="form-control" type="text" ng-model="oldKnjiga.naziv" id="naziv"/>
+		</div>
+		<div class="form-group">
+			<label for="pisac">Pisac</label>
+			<input class="form-control" type="text" ng-model="oldKnjiga.pisac" id="pisac"/>
+		</div>
+		<div class="form-group">
+			<label for="cena">Cena</label>
+			<input class="form-control" type="text" ng-model="oldKnjiga.cena" id="cena"/>
+		</div>
+		<div class="form-group">
+			<label for="kolicina">Kolicina</label>
+			<input class="form-control" type="text" ng-model="oldKnjiga.kolicina" id="kolicina"/>
+		</div>
+		<div class="form-group">
+			<label for="izdavac">Izdavac</label> 
+			<select class="form-control" ng-model="oldKnjiga.idIzdavaca" id="izdavac">
+				<option ng-repeat="i in izdavaci" value="{{ i.id }}">{{ i.naziv }}</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" ng-click="edit()">Edit</button>
+		</div>
+	</form>
+</div>
