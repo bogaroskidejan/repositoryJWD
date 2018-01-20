@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" 
+  xmlns="http://java.sun.com/xml/ns/j2ee" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" >
+  
+
+	<servlet>
+		<description>
+		</description>
+		<display-name>Knjiga</display-name>
+		<servlet-name>Knjiga</servlet-name>
+		<servlet-class>biblioteka.servlet.Knjiga</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>Autor</display-name>
+		<servlet-name>Autor</servlet-name>
+		<servlet-class>biblioteka.servlet.Autor</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DodajAutoraServlet</display-name>
+		<servlet-name>DodajAutoraServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.DodajAutoraServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DodajKnjiguServlet</display-name>
+		<servlet-name>DodajKnjiguServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.DodajKnjiguServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ListaKnjigaServlet</display-name>
+		<servlet-name>ListaKnjigaServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.ListaKnjigaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ListaAutoraServlet</display-name>
+		<servlet-name>ListaAutoraServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.ListaAutoraServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AdministracijaServlet</display-name>
+		<servlet-name>AdministracijaServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.AdministracijaServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LoginServlet</display-name>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PronadjiKnjiguServlet</display-name>
+		<servlet-name>PronadjiKnjiguServlet</servlet-name>
+		<servlet-class>biblioteka.servlet.PronadjiKnjiguServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PrikaziKnjigeAutora</display-name>
+		<servlet-name>PrikaziKnjigeAutora</servlet-name>
+		<servlet-class>biblioteka.servlet.PrikaziKnjigeAutora</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Knjiga</servlet-name>
+		<url-pattern>/Knjiga</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Autor</servlet-name>
+		<url-pattern>/Autor</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DodajAutoraServlet</servlet-name>
+		<url-pattern>/DodajAutoraServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DodajKnjiguServlet</servlet-name>
+		<url-pattern>/DodajKnjiguServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListaKnjigaServlet</servlet-name>
+		<url-pattern>/ListaKnjigaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ListaAutoraServlet</servlet-name>
+		<url-pattern>/ListaAutoraServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdministracijaServlet</servlet-name>
+		<url-pattern>/AdministracijaServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PronadjiKnjiguServlet</servlet-name>
+		<url-pattern>/PronadjiKnjiguServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PrikaziKnjigeAutora</servlet-name>
+		<url-pattern>/PrikaziKnjigeAutora</url-pattern>
+	</servlet-mapping>
+	
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	
+
+
+</web-app>
+
+  

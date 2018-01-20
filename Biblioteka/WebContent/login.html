@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script type = "text/javascript">
+  function provera(){
+	username = document.loginForma.username.value;
+	password = document.loginForma.password.value;
+	poruka = '';
+
+	if (username == ''){
+		poruka += 'Niste uneli korisnicko ime\n';
+		document.getElementById('usernameSpan').style.visibility = 'visible';
+	}
+	else
+		document.getElementById('usernameSpan').style.visibility = 'hidden';
+      
+	if (password == ''){ //|| password == password.toLowerCase() 
+		poruka += 'Niste uneli lozinku ili lozinka ne sadrzi nijedno veliko slovo\n';
+		document.getElementById('passwordSpan').style.visibility = 'visible';
+	}
+	else
+		document.getElementById('passwordSpan').style.visibility = 'hidden';
+      
+    if(password.length < 3) {
+        poruka += 'Password mora biti duzi od 3 slova';
+    }
+
+	if (poruka != ''){
+		alert(poruka);
+		return false;
+	}
+		
+	return true;
+
+	function usao(spanId){
+		document.getElementById(spanId).style.visibility = 'hidden';
+	}
+	
+	function izasao(element, spanId){
+		value = element.value;
+		if (value == '')
+			document.getElementById(spanId).style.visibility = 'visible';
+	}
+  }
+</script>
+<title>Logovanje</title>
+</head>
+<body>
+<h4>Ulogujte se</h4>
+	<form action="LoginServlet" name = "loginForma" method="post" onSubmit = "return provera()">
+		Username:<input type="text" name="username" placeholder="username" onfocus = "usao('usernameSpan')" onblur ="izasao(this, 'usernameSpan')"/> <span style = "color:red; visibility: hidden" id = "usernameSpan">Popunite polje</span><br/>
+		Password:<input type="text" name = "password" placeholder="password" onfocus = "usao('passwordSpan')" onblur = "izasao(this, 'passwordSpan')"/><span style = "color:red; visibility: hidden" id = "passwordSpan">Popunite polje</span><br/>
+		<input type="submit" value="login"/><br/>
+	</form>
+</body>
+</html>
