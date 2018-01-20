@@ -1,13 +1,20 @@
-Student Administration Implemented by: Java
+Studentska sluzba 
+Implemented by: Java
 
-Elections Implemented by: Java, SQL, JUnit
+Izbori 
+Implemented by: Java, SQL, JUnit
 
-Exchange office Implemented by: Java, SQL, JUnit
+Menjacnica 
+Implemented by: Java, SQL, JUnit
 
-Library Implemented by: Servlet, JSP, SQL, JS, JQuery, HTML, CSS
+Biblioteka 
+Implemented by: Servlet, JSP, SQL, JS, JQuery, HTML, CSS
 
-Webshop Implemented by: Servlet, JSP, SQL, JS, JQuery, HTML, CSS
+Webshop 
+Implemented by: Servlet, JSP, SQL, JS, JQuery, HTML, CSS
 
-Restaurant Implemented by: Spring, Hibernate, SQL, AngularJS, Bootstrap, HTML
+Restoran 
+Implemented by: Spring, Hibernate, SQL, AngularJS, Bootstrap, HTML
 
-Bookshop Implemented by: Spring, Hibernate, SQL, AngularJS, Bootstrap, HTML
+Knjizara 
+Implemented by: Spring, Hibernate, SQL, AngularJS, Bootstrap, HTML
