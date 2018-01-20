@@ -1,0 +1,86 @@
+<br /> <br />
+<div class="page-header">
+	<h1>Jelovnik</h1>
+	<p>Ovo je aplikacija za vodjenje jelovnika u restoranu.</p>
+</div>
+<div ng-controller="jelaCtrl">
+	<div ng-show="!view">
+	<div class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="view = !view">Filtriranje</button>
+	</div><br />
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="naziv">Naziv:</label> <input class="form-control" ng-model="newJelo.naziv" id="naziv" type="text" />
+		</div>
+		<div class="form-group">
+			<label for="cena">Cena:</label> <input class="form-control" ng-model="newJelo.cena" id="cena" type="text" />
+		</div>
+			<div class="form-group">
+				<label for="vrstaJela">Vrsta Jela:</label> 
+				<select class="form-control" ng-model="newJelo.idV" id="vrstaJela">
+					<option ng-selected="newJelo.vrstaJelaId == x.id" ng-repeat="x in vrsteJela" value="{{x.id}}">
+						{{x.naziv}}</option>
+				</select>
+			</div>
+		<div ng-show="!switchView" class="form-group">
+			<button class="btn btn-primary" ng-click="addJelo()">Sacuvaj</button>
+		</div>
+		<div ng-show="switchView" class="form-group">
+			<button class="btn btn-primary" ng-click="edit(newJelo.id)">Sacuvaj na istoj strani</button>
+			<button class="btn btn-success" ng-click="revert()">revert</button>
+		</div>
+	</form>
+	</div>
+	<br />
+	<div ng-show="view">
+	<div  class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="view = !view">Dodavanje/Izmena</button>
+	</div>
+	<br />
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="naziv">Naziv:</label> <input class="form-control" ng-model="searchedJelo.naziv" id="naziv" type="text" />
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" ng-click="search()">Filtriraj</button>
+		</div>
+	</form>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="vrstaJela">Vrsta jela:</label> <input class="form-control" ng-model="searchedJelo.nazivV" id="vrstaJela" type="text" />
+		</div>
+		<div class="form-group">
+			<button class="btn btn-primary" ng-click="search()">Filtriraj</button>
+		</div>
+	</form>
+	</div>
+	<br /> <br />
+	<div class="btn-group pull-right">
+		<button class="btn btn-primary" ng-click="go(-1)" ng-disabled="page == 0">prethodno</button>
+		<button class="btn btn-primary" ng-click="go(1)" ng-disabled="page == totalPages - 1">sledece</button>
+	</div>
+	<br />
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Naziv:</th>
+				<th>Cena:</th>
+				<th>Vrsta jela:</th>
+				<th>Akcija:</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="j in jela">
+				<td class="col-md-2">{{ j.naziv }}</td>
+				<td class="col-md-2">{{ j.cena }}</td>
+				<td class="col-md-2">{{ j.nazivV }}</td>
+				<td class="col-md-1"><button class="btn btn-danger" ng-click="deleteJelo(j.id)">obrisi</button></td>
+				<td><button class="btn btn-warning" ng-click="editJeloSP(j.id)">izmeni</button></td>
+				<td class="col-md-5"><button class="btn btn-warning" ng-click="editJelo(j.id)">izmeni na posebnoj stranici</button></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="pull-right">
+		<h3>strana<span class="badge">{{page + 1}}.</span></h3>
+	</div>
+</div>

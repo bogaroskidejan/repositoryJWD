@@ -1,0 +1,28 @@
+<div ng-controller="editJelaCtrl">
+	<h3>Edit jelo:</h3>
+	<form class="form-horizontal" name="form.cloneObj">
+		<div class="form-group">
+			<label for="cena">naziv:</label> <input class="form-control"
+				type="text" ng-model="oldJelo.naziv" />
+		</div>
+		<div class="form-group">
+			<label for="cena">cena:</label> <input class="form-control"
+				type="text" ng-model="oldJelo.cena" id="cena" />
+		</div>
+		<div class="form-group">
+				<label for="vrstaJela">Vrsta Jela</label> 
+				<select class="form-control" ng-model="newJelo.idV" id="vrstaJela">
+					<option ng-selected="newJelo.vrstaJelaId == x.id" ng-repeat="x in vrsteJela" value="{{x.id}}">
+						{{x.naziv}}</option>
+				</select>
+			</div>
+		<div class="form-group">
+			<button class="btn btn-primary" ng-click="edit()">Edit</button>
+		</div>
+	</form>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<button class="btn btn-success" ng-click="revert()">revert</button>
+		</div>
+	</form>
+</div>
